@@ -1,0 +1,365 @@
+<html lang="en">
+<head>
+
+    <title>Skills</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(images/coquette.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: black; 
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-out, glow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+            50% {
+                text-shadow: 0 0 20px #ff4d88, 0 0 30px #ff4d88, 0 0 40px #ff4d88;
+            }
+            100% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+        }
+
+        header h1 {
+            font-family: 'Alex Brush', cursive;
+            font-size: 4rem;
+            margin: 0;
+            animation: scaleUp 1.5s ease-in-out;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #777;
+        }
+
+
+        nav {
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgba(248, 245, 242, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #ff4d88;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ff99b8;
+            text-shadow: 0 0 10px #ff99b8, 0 0 20px #ff99b8, 0 0 30px #ff99b8;
+        }
+
+
+        .skills-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #ff4d88;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+
+        .skill-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .skill-card {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            color: white; 
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            animation: glowText 1.5s ease-in-out infinite; 
+        }
+
+        @keyframes glowText {
+            0% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+            50% {
+                text-shadow: 0 0 20px #ff4d88, 0 0 30px #ff4d88, 0 0 40px #ff4d88;
+            }
+            100% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+        }
+
+        .skill-card ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-card ul li {
+            font-size: 1rem;
+            color: black; 
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-card ul li::before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ff4d88;
+            font-size: 1.5rem;
+        }
+
+ 
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: rgba(255, 192, 203, 0.5); 
+            opacity: 0;
+            animation: slideUp 1s ease-out, fadeIn 1s forwards;
+        }
+
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        th, td {
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #ddd;
+            background-color: rgba(255, 192, 203, 0.3); 
+        }
+
+        th {
+            background-color: #ff4d88;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        td {
+            font-size: 1rem;
+            color: black; 
+        }
+
+
+        .back-to-home {
+            color: #ff4d88;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: rgba(248, 245, 242, 0.8);
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: center;
+        }
+
+        .back-to-home:hover {
+            background-color: #ff4d88;
+            color: white;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(248, 245, 242, 0.8);
+            color: #777;
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+
+        @media (max-width: 768px) {
+            .skill-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Skills</h1>
+        <p>Explore my skills and abilities that I've gained over time.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="biodata.html">About Me</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="skills.html">Skills</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <section class="skills-section">
+        <h2>Skills Overview</h2>
+
+
+        <div class="skill-cards">
+
+            <div class="skill-card">
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React, Angular, Node</li>
+                    <li>Create poster using canva</li>
+                    <li>Taking pictures using camera</li>
+                </ul>
+            </div>
+
+ 
+            <div class="skill-card">
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Communication</li>
+                    <li>Team Collaboration</li>
+                    <li>Conflict Resolution</li>
+                    <li>Adaptability</li>
+                </ul>
+            </div>
+
+
+            <div class="skill-card">
+                <h3>Leadership Skills</h3>
+                <ul>
+                    <li>Project Management</li>
+                    <li>Team Leadership</li>
+                    <li>Strategic Planning</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <table>
+            <tr>
+                <th>Skill</th>
+                <th>Proficiency</th>
+                <th>Experience</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>Intermediate</td>
+                <td>3+ months</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Intermediate</td>
+                <td>3+ months</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Intermediate</td>
+                <td>3+ months</td>
+            </tr>
+            <tr>
+                <td>React</td>
+                <td>Intermediate</td>
+                <td>2+ years</td>
+            </tr>
+            <tr>
+                <td>Leadership</td>
+                <td>Moderate</td>
+                <td>1+ years</td>
+            </tr>
+        </table>
+
+
+        <a href="index.html" class="back-to-home">Back to Homepage</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nur Fatin Humaira. All rights reserved.</p>
+    </footer>
+</body>
+</html>

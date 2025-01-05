@@ -1,0 +1,292 @@
+<html lang="en">
+<head>
+    <title>Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Alex+Brush&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(images/coquette.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: black;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-out, glow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+            50% {
+                text-shadow: 0 0 20px #ff4d88, 0 0 30px #ff4d88, 0 0 40px #ff4d88;
+            }
+            100% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+        }
+
+        header h1 {
+            font-family: 'Alex Brush', cursive; 
+            font-size: 4rem;
+            margin: 0;
+            animation: scaleUp 1.5s ease-in-out;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #777;
+        }
+
+        nav {
+            text-align: center;
+            padding: 15px 0;
+            background-color: rgba(248, 245, 242, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative; 
+            z-index: 10; 
+        }
+
+        nav a {
+            color: #ff4d88;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            position: relative;
+            z-index: 20; 
+            transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ff99b8;
+            text-shadow: 0 0 10px #ff99b8, 0 0 20px #ff99b8, 0 0 30px #ff99b8;
+        }
+
+
+        .gallery-section {
+            padding: 50px 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #ff4d88;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+
+        .subsection {
+            margin-bottom: 50px;
+        }
+
+        .subsection h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: white; 
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 1px;
+            animation: glow 1.5s ease-in-out infinite;
+        }
+
+        .subsection .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .content-item {
+            width: 45%;
+            margin: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .content-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+        }
+
+        .content-item:hover img {
+            transform: scale(1.1); 
+            filter: brightness(1.2); 
+        }
+
+        .content-item video {
+            width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+        }
+
+        /* Button Styling */
+        .back-to-home {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-to-home button {
+            background-color: #ff4d88;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-home button:hover {
+            background-color: #ff99b8;
+        }
+
+ 
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(248, 245, 242, 0.8);
+            color: #777;
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+        <p>Explore the moments captured in different sections: Myself, Family, Friends.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="biodata.html">About Me</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="skills.html">Skills</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <section class="gallery-section">
+
+        <div class="subsection" id="myself">
+            <h3>Myself</h3>
+            <div class="content">
+                <div class="content-item">
+                    <img src="images/myself 1 (2).jpeg" alt="Myself">
+                </div>
+                <div class="content-item">
+                    <img src="images/myself 3.jpeg" alt="Myself">
+                </div>
+                <div class="content-item">
+                    <img src="images/myself 2.jpeg" alt="Myself">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="subsection" id="family">
+            <h3>Family</h3>
+            <div class="content">
+                <div class="content-item">
+                    <img src="images/family 2.jpeg" alt="Family">
+                </div>
+                <div class="content-item">
+                    <img src="images/family 1.jpeg" alt="Family">
+                </div>
+                <div class="content-item">
+                    <img src="images/family 3.jpeg" alt="Family">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="subsection" id="friends">
+            <h3>Friends</h3>
+            <div class="content">
+                <div class="content-item">
+                    <img src="images/friends_1.jpeg" alt="Friends">
+                </div>
+                <div class="content-item">
+                    <img src="images/friends 2.jpeg" alt="Friends">
+                </div>
+                <div class="content-item">
+                    <video controls poster="images/friends thumbnail.jpeg">
+                        <source src="video/video classmate.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+
+            <div class="back-to-home">
+                <button onclick="window.location.href='index.html'">Back to Homepage</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nur Fatin Humaira. All rights reserved.</p>
+    </footer>
+</body>
+</html>

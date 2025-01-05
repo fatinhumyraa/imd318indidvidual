@@ -1,0 +1,344 @@
+<html lang="en">
+<head>
+
+    <title>Family Tree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(images/coquette.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-out, glow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+            50% {
+                text-shadow: 0 0 20px #ff4d88, 0 0 30px #ff4d88, 0 0 40px #ff4d88;
+            }
+            100% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+        }
+
+        header h1 {
+            font-family: 'Alex Brush', cursive;
+            font-size: 4rem;
+            margin: 0;
+            animation: scaleUp 1.5s ease-in-out;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #777;
+        }
+
+
+        nav {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgba(248, 245, 242, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #ff4d88;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ff99b8;
+            text-shadow: 0 0 10px #ff99b8, 0 0 20px #ff99b8, 0 0 30px #ff99b8;
+        }
+
+
+        .family-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .generation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .generation .family-member {
+            width: 150px;
+            height: 150px;
+            border: 5px solid #ff4d88;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 0 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .generation .family-member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .generation .family-member:hover {
+            transform: scale(1.1);
+        }
+
+        .generation .family-member span {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #555;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ff4d88;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(248, 245, 242, 0.8);
+            color: #777;
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #ff4d88;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-home:hover {
+            background-color: #ff99b8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Family Tree</h1>
+        <p>Click on a family member to see their details.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="biodata.html">About Me</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="skills.html">Skills</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <div class="family-tree">
+        <div class="generation">
+            <div class="family-member" onclick="showDetails('father')">
+                <img src="images/father.jpeg" alt="Father">
+                <span>Father</span>
+            </div>
+            <div class="family-member" onclick="showDetails('mother')">
+                <img src="images/mother.jpeg" alt="Mother">
+                <span>Mother</span>
+            </div>
+        </div>
+
+        <div class="generation">
+            <div class="family-member" onclick="showDetails('sibling1')">
+                <img src="images/brother.jpeg" alt="Sibling 1">
+                <span>Brother</span>
+            </div>
+            <div class="family-member" onclick="showDetails('sibling2')">
+                <img src="images/sister.jpeg" alt="Sibling 2">
+                <span>Sister</span>
+            </div>
+            <div class="family-member" onclick="showDetails('sibling3')">
+                <img src="images/maira.jpeg" alt="Sibling 3">
+                <span>Myself</span>
+            </div>
+            <div class="family-member" onclick="showDetails('sibling4')">
+                <img src="images/asyraaf (2).jpeg" alt="Sibling 4">
+                <span>Brother</span>
+            </div>
+            <div class="family-member" onclick="showDetails('sibling5')">
+                <img src="images/aidil.jpeg" alt="Sibling 5">
+                <span>Brother</span>
+            </div>
+            <div class="family-member" onclick="showDetails('sibling6')">
+                <img src="images/afiq.jpeg" alt="Sibling 6">
+                <span>Brother</span>
+            </div>
+        </div>
+        <a href="index.html" class="back-home">Back to Homepage</a>
+    </div>
+
+
+    <div id="family-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Family Member</h2>
+            <p id="modal-description">Details about the selected family member will appear here.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nur Fatin Humaira. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function showDetails(member) {
+            var title = '';
+            var description = '';
+
+            switch (member) {
+                case 'father':
+                    title = 'Jeffri Wira';
+                    description = 'This is my father. He was born on 1 January 1968. He is an important figure in my life. A dedicated man who has always put his family first, he has been a guiding light in my life. With a strong work ethic and unwavering love for his family, he has taught me the importance of perseverance, honesty, and kindness.'; break;
+                case 'mother':
+                    title = 'Hafiza';
+                    description = 'This is my mother. She was born on 13 February 1970. She has always been supportive and caring. My mother is someone who values kindness, patience, and hard work. From a young age, she taught me the importance of empathy and the power of a gentle word. Her ability to listen, understand, and offer solutions has made her not just a mother, but also a confidante and a best friend.'; break;
+                case 'sibling1':
+                    title = 'Muhammad Qayyum';
+                    description = 'This is my oldest brother, he was born on 25 December 1999. A wonderful person in my family. From the days of childhood adventures to growing up and facing life challenges together.'; break;
+                case 'sibling2':
+                    title = 'Rabiatul Adawiyah';
+                    description = 'This is my sister, she was born on 27 May 2001. She is amazing and fun to be around. She tackles life’s challenges with grace, never giving up and always looking for ways to overcome obstacles.'; break;
+                case 'sibling3':
+                    title = 'Nur Fatin Humaira';
+                    description = 'This is myself, born on 23 September 20024. A hardworking and dedicated individual. Strong, determined, and hardworking, my brother is a person who goes after what he wants with passion and commitment.'; break;
+                case 'sibling4':
+                    title = 'Muhammad Asyraaf';
+                    description = 'This is my brother, born on 4 November 2006. He is kind-hearted and always helpful. Beyond his many talents and accomplishments, my brother is simply an amazing person to be around.'; break;
+                case 'sibling5':
+                    title = 'Aidil Taqiyuddin';
+                    description = 'This is my brother, born on 3 October 2008. He is creative and full of ideas. He is not just my brother, but also one of my best friends, and I know I am lucky to have him in my life.'; break;
+                case 'sibling6':
+                    title = 'Muhammad Afiq';
+                    description = 'This is my brother, born on 11 January 2010. A joyful and positive person. Our bond as siblings is something I truly treasure, and I am grateful for all the memories we’ve shared over the years.'; break;
+                default: break;
+            }
+
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-description').textContent = description;
+
+            document.getElementById('family-modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('family-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

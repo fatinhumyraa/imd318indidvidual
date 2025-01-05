@@ -1,0 +1,256 @@
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(images/coquette.jpg); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed; 
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-out, glow 1.5s ease-in-out infinite;
+            width: 100%;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+            50% {
+                text-shadow: 0 0 20px #ff4d88, 0 0 30px #ff4d88, 0 0 40px #ff4d88;
+            }
+            100% {
+                text-shadow: 0 0 5px #ff4d88, 0 0 10px #ff4d88, 0 0 15px #ff4d88;
+            }
+        }
+
+        header h1 {
+            font-family: 'Alex Brush', cursive;
+            font-size: 4rem;
+            margin: 0;
+            animation: scaleUp 1.5s ease-in-out;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #777;
+        }
+
+
+        nav {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgba(248, 245, 242, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        nav a {
+            color: #ff4d88;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #ff99b8;
+            text-shadow: 0 0 10px #ff99b8, 0 0 20px #ff99b8, 0 0 30px #ff99b8;
+        }
+
+
+        .section-box {
+            width: 80%; 
+            max-width: 900px; 
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px; 
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-box h2 {
+            font-family: 'Alex Brush', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff4d88;
+        }
+
+        .section-box p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(248, 245, 242, 0.8);
+            color: #777;
+            font-size: 0.9rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+
+        .social-media-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-media i {
+            font-size: 2rem;
+            margin: 10px;
+            color: #ff4d88;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .social-media i:hover {
+            color: #ff99b8;
+            text-shadow: 0 0 10px #ff99b8, 0 0 20px #ff99b8, 0 0 30px #ff99b8;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🌸 My Personal Webpage 🌸</h1>
+    <p>Welcome to my personal webpage!</p>
+</header>
+
+<nav>
+    <a href="biodata.html">About Me</a>
+    <a href="experiences.html">Experiences</a>
+    <a href="education.html">Education</a>
+    <a href="family.html">Family</a>
+    <a href="skills.html">Skills</a>
+    <a href="gallery.html">Gallery</a>
+</nav>
+
+<section id="aboutme" class="section-box" onclick="window.location.href='biodata.html';">
+    <h2>About Me</h2>
+    <p>Learn more about me, my background, and my story.</p>
+</section>
+
+<section id="experiences" class="section-box" onclick="window.location.href='experiences.html';">
+    <h2>Experiences</h2>
+    <p>Check out my experiences, including my internship and personal projects.</p>
+</section>
+
+<section id="education" class="section-box" onclick="window.location.href='education.html';">
+    <h2>Education</h2>
+    <p>Find out about my educational background and achievements.</p>
+</section>
+
+<section id="family" class="section-box" onclick="window.location.href='family.html';">
+    <h2>Family</h2>
+    <p>Learn more about my family and the values that drive me.</p>
+</section>
+
+<section id="skills" class="section-box" onclick="window.location.href='skills.html';">
+    <h2>Skills</h2>
+    <p>Explore the skills I have gained through my work and studies.</p>
+</section>
+
+<section id="gallery" class="section-box" onclick="window.location.href='gallery.html';">
+    <h2>Gallery</h2>
+    <p>Take a look at my gallery of pictures and moments.</p>
+</section>
+
+<section id="social-media" class="section-box social-media-container">
+    <div class="social-media">
+        <h2>Follow Me</h2>
+        <a href="https://www.instagram.com/fatinhumyraa_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@maira.jw?_t=ZS-8smxxwI5UVL&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.linkedin.com/in/nur-fatin-humaira-68b5b332a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</section>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+<footer>
+    <p>&copy; 2025 Fatin Humaira. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
